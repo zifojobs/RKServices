@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Flyer A4 – Promo Charcuterie Rayon 44 – Auchan Kaolack</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 210mm;
+      height: 297mm;
+      font-family: 'Arial', sans-serif;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: #E2001A;
+      color: white;
+      padding: 10mm 12mm 8mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      font-size: 32pt;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: white;
+    }
+
+    .header-logo span {
+      background: white;
+      color: #E2001A;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 34pt;
+    }
+
+    .header-tagline {
+      font-size: 9pt;
+      text-align: right;
+      line-height: 1.4;
+      opacity: 0.9;
+    }
+
+    .header-tagline strong {
+      font-size: 11pt;
+      display: block;
+    }
+
+    /* ===== BANNER ===== */
+    .banner {
+      background: #FF6B00;
+      color: white;
+      text-align: center;
+      padding: 5mm 8mm;
+    }
+
+    .banner h1 {
+      font-size: 28pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.1;
+    }
+
+    .banner p {
+      font-size: 11pt;
+      margin-top: 2mm;
+      opacity: 0.95;
+      letter-spacing: 1px;
+    }
+
+    /* ===== URGENCY BAR ===== */
+    .urgency {
+      background: #1a1a1a;
+      color: #FFD700;
+      text-align: center;
+      padding: 3mm 8mm;
+      font-size: 10pt;
+      font-weight: bold;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8mm;
+    }
+
+    .urgency::before,
+    .urgency::after {
+      content: '⚡';
+      font-size: 14pt;
+    }
+
+    /* ===== PRODUCTS GRID ===== */
+    .products-section {
+      flex: 1;
+      padding: 6mm 10mm;
+      background: #f8f8f8;
+    }
+
+    .section-title {
+      font-size: 12pt;
+      color: #E2001A;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 5mm;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 6px;
+      border: 2px solid #E2001A;
+      padding: 4mm 5mm;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: #E2001A;
+    }
+
+    .product-name {
+      font-size: 10pt;
+      font-weight: 800;
+      color: #1a1a1a;
+      line-height: 1.2;
+      padding-left: 3mm;
+      margin-bottom: 2mm;
+    }
+
+    .product-brand {
+      font-size: 8pt;
+      color: #666;
+      padding-left: 3mm;
+      font-style: italic;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 3mm;
+      padding-left: 3mm;
+    }
+
+    .price-old {
+      font-size: 9pt;
+      color: #999;
+      text-decoration: line-through;
+    }
+
+    .price-new {
+      font-size: 18pt;
+      font-weight: 900;
+      color: #E2001A;
+      line-height: 1;
+    }
+
+    .price-new span {
+      font-size: 9pt;
+      font-weight: normal;
+    }
+
+    .badge-discount {
+      background: #E2001A;
+      color: white;
+      font-size: 9pt;
+      font-weight: 900;
+      padding: 2mm 3mm;
+      border-radius: 50%;
+      width: 14mm;
+      height: 14mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.1;
+      flex-shrink: 0;
+    }
+
+    /* ===== HIGHLIGHT BOX ===== */
+    .highlight-box {
+      background: #E2001A;
+      color: white;
+      margin: 4mm 10mm;
+      border-radius: 8px;
+      padding: 4mm 8mm;
+      text-align: center;
+    }
+
+    .highlight-box h3 {
+      font-size: 12pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 1mm;
+    }
+
+    .highlight-box p {
+      font-size: 9pt;
+      opacity: 0.9;
+    }
+
+    /* ===== QUALITY BADGES ===== */
+    .quality-row {
+      display: flex;
+      justify-content: space-around;
+      margin: 3mm 10mm;
+      gap: 3mm;
+    }
+
+    .quality-badge {
+      background: white;
+      border: 1.5px solid #ddd;
+      border-radius: 6px;
+      padding: 3mm 4mm;
+      text-align: center;
+      flex: 1;
+    }
+
+    .quality-badge .icon {
+      font-size: 16pt;
+      display: block;
+      margin-bottom: 1mm;
+    }
+
+    .quality-badge .label {
+      font-size: 7pt;
+      color: #555;
+      line-height: 1.2;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 5mm 12mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-left {
+      font-size: 9pt;
+      line-height: 1.6;
+    }
+
+    .footer-left strong {
+      font-size: 11pt;
+      color: #FFD700;
+    }
+
+    .footer-right {
+      text-align: right;
+      font-size: 8pt;
+      color: #aaa;
+      line-height: 1.5;
+    }
+
+    .validity {
+      background: #FF6B00;
+      color: white;
+      font-size: 8pt;
+      padding: 1.5mm 3mm;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 2mm;
+      display: inline-block;
+    }
+
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-logo">
+        <span>auchan</span>
+      </div>
+      <div class="header-tagline">
+        <strong>Kaolack – Rayon Charcuterie</strong>
+        Département Frais · Rayon 44
+      </div>
+    </div>
+
+    <!-- MAIN BANNER -->
+    <div class="banner">
+      <h1>GRAND DÉSTOCKAGE<br>CHARCUTERIE</h1>
+      <p>Des prix imbattables sur une sélection de produits frais</p>
+    </div>
+
+    <!-- URGENCY BAR -->
+    <div class="urgency">
+      OFFRES VALABLES JUSQU'À ÉPUISEMENT DES STOCKS — NE RATEZ PAS CES PRIX !
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="products-section">
+      <div class="section-title">Nos produits en promotion</div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-name">Saucisson Bœuf Ail</div>
+          <div class="product-brand">Marque NAFY · au kilo</div>
+          <div class="price-row">
+            <div>
+              <div class="price-old">Prix normal</div>
+              <div class="price-new">–20% <span>/ kg</span></div>
+            </div>
+            <div class="badge-discount">–20%</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-name">Saucisson Bœuf Piquant</div>
+          <div class="product-brand">Marque NAFY · au kilo</div>
+          <div class="price-row">
+            <div>
+              <div class="price-old">Prix normal</div>
+              <div class="price-new">–25% <span>/ kg</span></div>
+            </div>
+            <div class="badge-discount">–25%</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-name">Saucisson Bœuf</div>
+          <div class="product-brand">Marque THIOSSANE · au kilo</div>
+          <div class="price-row">
+            <div>
+              <div class="price-old">Prix normal</div>
+              <div class="price-new">–20% <span>/ kg</span></div>
+            </div>
+            <div class="badge-discount">–20%</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-name">Jambon Bœuf Bloc</div>
+          <div class="product-brand">Marque NAFY · au kilo</div>
+          <div class="price-row">
+            <div>
+              <div class="price-old">Prix normal</div>
+              <div class="price-new">–25% <span>/ kg</span></div>
+            </div>
+            <div class="badge-discount">–25%</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HIGHLIGHT DEAL -->
+    <div class="highlight-box">
+      <h3>Offre Spéciale – 2 produits achetés = livraison priorité</h3>
+      <p>Consultez notre équipe en rayon pour bénéficier des meilleurs conseils et offres personnalisées</p>
+    </div>
+
+    <!-- QUALITY BADGES -->
+    <div class="quality-row">
+      <div class="quality-badge">
+        <span class="icon">🥩</span>
+        <span class="label">100% Bœuf Halal</span>
+      </div>
+      <div class="quality-badge">
+        <span class="icon">❄️</span>
+        <span class="label">Chaîne du Froid Respectée</span>
+      </div>
+      <div class="quality-badge">
+        <span class="icon">✅</span>
+        <span class="label">Qualité Contrôlée</span>
+      </div>
+      <div class="quality-badge">
+        <span class="icon">📅</span>
+        <span class="label">DLC Vérifiée Chaque Jour</span>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footer-left">
+        <strong>Auchan Kaolack</strong><br>
+        Rayon 44 – Charcuterie Traditionnelle<br>
+        <span class="validity">OFFRE LIMITÉE – JUSQU'À ÉPUISEMENT DU STOCK</span>
+      </div>
+      <div class="footer-right">
+        Prix applicables en rayon.<br>
+        Sous réserve de disponibilité.<br>
+        Voir conditions en magasin.
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
