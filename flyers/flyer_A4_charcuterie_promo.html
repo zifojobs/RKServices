@@ -36,17 +36,16 @@
     .header {
       background: #E2001A;
       color: white;
-      padding: 10mm 12mm 8mm;
+      padding: 7mm 10mm 6mm;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .header-logo {
-      font-size: 32pt;
+      font-size: 28pt;
       font-weight: 900;
       letter-spacing: -1px;
-      color: white;
     }
 
     .header-logo span {
@@ -54,18 +53,17 @@
       color: #E2001A;
       padding: 2px 8px;
       border-radius: 4px;
-      font-size: 34pt;
     }
 
     .header-tagline {
-      font-size: 9pt;
+      font-size: 8pt;
       text-align: right;
-      line-height: 1.4;
-      opacity: 0.9;
+      line-height: 1.5;
+      opacity: 0.92;
     }
 
     .header-tagline strong {
-      font-size: 11pt;
+      font-size: 10pt;
       display: block;
     }
 
@@ -74,22 +72,50 @@
       background: #FF6B00;
       color: white;
       text-align: center;
-      padding: 5mm 8mm;
+      padding: 5mm 8mm 4mm;
     }
 
-    .banner h1 {
+    .banner-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5mm;
+      margin-bottom: 2mm;
+    }
+
+    .badge-50 {
+      background: white;
+      color: #E2001A;
       font-size: 28pt;
+      font-weight: 900;
+      width: 22mm;
+      height: 22mm;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .badge-50 .pct {
+      font-size: 10pt;
+      font-weight: 900;
+    }
+
+    .banner-text h1 {
+      font-size: 22pt;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 2px;
       line-height: 1.1;
     }
 
-    .banner p {
-      font-size: 11pt;
-      margin-top: 2mm;
+    .banner-text p {
+      font-size: 9pt;
+      margin-top: 1mm;
       opacity: 0.95;
-      letter-spacing: 1px;
     }
 
     /* ===== URGENCY BAR ===== */
@@ -98,34 +124,24 @@
       color: #FFD700;
       text-align: center;
       padding: 3mm 8mm;
-      font-size: 10pt;
+      font-size: 8.5pt;
       font-weight: bold;
-      letter-spacing: 1px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8mm;
-    }
-
-    .urgency::before,
-    .urgency::after {
-      content: '⚡';
-      font-size: 14pt;
+      letter-spacing: 0.5px;
     }
 
     /* ===== PRODUCTS GRID ===== */
     .products-section {
       flex: 1;
-      padding: 6mm 10mm;
+      padding: 4mm 8mm;
       background: #f8f8f8;
     }
 
     .section-title {
-      font-size: 12pt;
+      font-size: 10pt;
       color: #E2001A;
       font-weight: bold;
       text-align: center;
-      margin-bottom: 5mm;
+      margin-bottom: 3mm;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -133,16 +149,14 @@
     .products-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4mm;
+      gap: 3mm;
     }
 
     .product-card {
       background: white;
       border-radius: 6px;
       border: 2px solid #E2001A;
-      padding: 4mm 5mm;
-      display: flex;
-      flex-direction: column;
+      padding: 3.5mm 4mm 3.5mm 7mm;
       position: relative;
       overflow: hidden;
     }
@@ -150,26 +164,23 @@
     .product-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 5px;
       height: 100%;
       background: #E2001A;
     }
 
     .product-name {
-      font-size: 10pt;
-      font-weight: 800;
+      font-size: 9pt;
+      font-weight: 900;
       color: #1a1a1a;
       line-height: 1.2;
-      padding-left: 3mm;
-      margin-bottom: 2mm;
+      margin-bottom: 1mm;
     }
 
-    .product-brand {
-      font-size: 8pt;
-      color: #666;
-      padding-left: 3mm;
+    .product-unit {
+      font-size: 7pt;
+      color: #888;
       font-style: italic;
     }
 
@@ -177,92 +188,97 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 3mm;
-      padding-left: 3mm;
+      margin-top: 2.5mm;
+    }
+
+    .prices {
+      display: flex;
+      flex-direction: column;
     }
 
     .price-old {
-      font-size: 9pt;
-      color: #999;
+      font-size: 8pt;
+      color: #aaa;
       text-decoration: line-through;
     }
 
     .price-new {
-      font-size: 18pt;
+      font-size: 17pt;
       font-weight: 900;
       color: #E2001A;
       line-height: 1;
     }
 
     .price-new span {
-      font-size: 9pt;
+      font-size: 7.5pt;
       font-weight: normal;
+      color: #555;
     }
 
     .badge-discount {
       background: #E2001A;
       color: white;
-      font-size: 9pt;
+      font-size: 11pt;
       font-weight: 900;
-      padding: 2mm 3mm;
+      width: 13mm;
+      height: 13mm;
       border-radius: 50%;
-      width: 14mm;
-      height: 14mm;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      line-height: 1.1;
       flex-shrink: 0;
+      line-height: 1;
     }
 
     /* ===== HIGHLIGHT BOX ===== */
     .highlight-box {
-      background: #E2001A;
-      color: white;
-      margin: 4mm 10mm;
-      border-radius: 8px;
-      padding: 4mm 8mm;
+      background: #1a1a1a;
+      color: #FFD700;
+      margin: 3mm 8mm;
+      border-radius: 6px;
+      padding: 3mm 6mm;
       text-align: center;
     }
 
     .highlight-box h3 {
-      font-size: 12pt;
+      font-size: 10.5pt;
       font-weight: 900;
       text-transform: uppercase;
-      margin-bottom: 1mm;
+      letter-spacing: 1px;
     }
 
     .highlight-box p {
-      font-size: 9pt;
-      opacity: 0.9;
+      font-size: 7.5pt;
+      color: white;
+      opacity: 0.85;
+      margin-top: 1mm;
     }
 
     /* ===== QUALITY BADGES ===== */
     .quality-row {
       display: flex;
       justify-content: space-around;
-      margin: 3mm 10mm;
+      margin: 0 8mm 3mm;
       gap: 3mm;
     }
 
     .quality-badge {
       background: white;
       border: 1.5px solid #ddd;
-      border-radius: 6px;
-      padding: 3mm 4mm;
+      border-radius: 5px;
+      padding: 2.5mm 3mm;
       text-align: center;
       flex: 1;
     }
 
     .quality-badge .icon {
-      font-size: 16pt;
+      font-size: 13pt;
       display: block;
       margin-bottom: 1mm;
     }
 
     .quality-badge .label {
-      font-size: 7pt;
+      font-size: 6.5pt;
       color: #555;
       line-height: 1.2;
       font-weight: bold;
@@ -271,40 +287,41 @@
 
     /* ===== FOOTER ===== */
     .footer {
-      background: #1a1a1a;
+      background: #E2001A;
       color: white;
-      padding: 5mm 12mm;
+      padding: 4mm 10mm;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .footer-left {
-      font-size: 9pt;
+      font-size: 8pt;
       line-height: 1.6;
     }
 
     .footer-left strong {
-      font-size: 11pt;
-      color: #FFD700;
+      font-size: 10pt;
+      display: block;
+    }
+
+    .validity {
+      background: white;
+      color: #E2001A;
+      font-size: 7.5pt;
+      padding: 1mm 3mm;
+      border-radius: 3px;
+      font-weight: 900;
+      margin-top: 1mm;
+      display: inline-block;
+      text-transform: uppercase;
     }
 
     .footer-right {
       text-align: right;
-      font-size: 8pt;
-      color: #aaa;
+      font-size: 7pt;
+      opacity: 0.85;
       line-height: 1.5;
-    }
-
-    .validity {
-      background: #FF6B00;
-      color: white;
-      font-size: 8pt;
-      padding: 1.5mm 3mm;
-      border-radius: 4px;
-      font-weight: bold;
-      margin-top: 2mm;
-      display: inline-block;
     }
 
     @media print {
@@ -320,94 +337,128 @@
 
     <!-- HEADER -->
     <div class="header">
-      <div class="header-logo">
-        <span>auchan</span>
-      </div>
+      <div class="header-logo"><span>auchan</span></div>
       <div class="header-tagline">
-        <strong>Kaolack – Rayon Charcuterie</strong>
-        Département Frais · Rayon 44
+        <strong>Auchan Kaolack (SN1041)</strong>
+        Département Frais · Rayon 44 – Charcuterie Traditionnelle
       </div>
     </div>
 
     <!-- MAIN BANNER -->
     <div class="banner">
-      <h1>GRAND DÉSTOCKAGE<br>CHARCUTERIE</h1>
-      <p>Des prix imbattables sur une sélection de produits frais</p>
+      <div class="banner-top">
+        <div class="badge-50">
+          <div>-50</div>
+          <div class="pct">%</div>
+        </div>
+        <div class="banner-text">
+          <h1>GRAND DÉSTOCKAGE<br>CHARCUTERIE</h1>
+          <p>50% de réduction sur une sélection de produits frais · Offre limitée</p>
+        </div>
+        <div class="badge-50">
+          <div>-50</div>
+          <div class="pct">%</div>
+        </div>
+      </div>
     </div>
 
     <!-- URGENCY BAR -->
     <div class="urgency">
-      OFFRES VALABLES JUSQU'À ÉPUISEMENT DES STOCKS — NE RATEZ PAS CES PRIX !
+      ⚡ OFFRES VALABLES JUSQU'À ÉPUISEMENT DES STOCKS — NE RATEZ PAS CES PRIX ! ⚡
     </div>
 
     <!-- PRODUCTS -->
     <div class="products-section">
-      <div class="section-title">Nos produits en promotion</div>
+      <div class="section-title">Produits en promotion à –50%</div>
 
       <div class="products-grid">
 
         <div class="product-card">
-          <div class="product-name">Saucisson Bœuf Ail</div>
-          <div class="product-brand">Marque NAFY · au kilo</div>
+          <div class="product-name">Saucisson Poulet Ail</div>
+          <div class="product-unit">DINDY · prix au 100g</div>
           <div class="price-row">
-            <div>
-              <div class="price-old">Prix normal</div>
-              <div class="price-new">–20% <span>/ kg</span></div>
+            <div class="prices">
+              <div class="price-old">485 F / 100g</div>
+              <div class="price-new">242 F <span>/ 100g</span></div>
             </div>
-            <div class="badge-discount">–20%</div>
+            <div class="badge-discount">–50%</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-name">Saucisson Poulet Piquant</div>
+          <div class="product-unit">DAARA · prix au 100g</div>
+          <div class="price-row">
+            <div class="prices">
+              <div class="price-old">355 F / 100g</div>
+              <div class="price-new">177 F <span>/ 100g</span></div>
+            </div>
+            <div class="badge-discount">–50%</div>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-name">Saucisson Bœuf Piquant</div>
-          <div class="product-brand">Marque NAFY · au kilo</div>
+          <div class="product-unit">DAARA · prix au 100g</div>
           <div class="price-row">
-            <div>
-              <div class="price-old">Prix normal</div>
-              <div class="price-new">–25% <span>/ kg</span></div>
+            <div class="prices">
+              <div class="price-old">335 F / 100g</div>
+              <div class="price-new">167 F <span>/ 100g</span></div>
             </div>
-            <div class="badge-discount">–25%</div>
+            <div class="badge-discount">–50%</div>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-name">Saucisson Bœuf</div>
-          <div class="product-brand">Marque THIOSSANE · au kilo</div>
+          <div class="product-name">Saucisson Poulet Nature</div>
+          <div class="product-unit">DAARA · prix au 100g</div>
           <div class="price-row">
-            <div>
-              <div class="price-old">Prix normal</div>
-              <div class="price-new">–20% <span>/ kg</span></div>
+            <div class="prices">
+              <div class="price-old">318 F / 100g</div>
+              <div class="price-new">159 F <span>/ 100g</span></div>
             </div>
-            <div class="badge-discount">–20%</div>
+            <div class="badge-discount">–50%</div>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-name">Jambon Bœuf Bloc</div>
-          <div class="product-brand">Marque NAFY · au kilo</div>
+          <div class="product-name">Saucisson Bœuf Nature</div>
+          <div class="product-unit">DAARA · prix au 100g</div>
           <div class="price-row">
-            <div>
-              <div class="price-old">Prix normal</div>
-              <div class="price-new">–25% <span>/ kg</span></div>
+            <div class="prices">
+              <div class="price-old">299 F / 100g</div>
+              <div class="price-new">150 F <span>/ 100g</span></div>
             </div>
-            <div class="badge-discount">–25%</div>
+            <div class="badge-discount">–50%</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-name">Saucisson Bœuf Piquant</div>
+          <div class="product-unit">NAFY · prix au 100g</div>
+          <div class="price-row">
+            <div class="prices">
+              <div class="price-old">299 F / 100g</div>
+              <div class="price-new">150 F <span>/ 100g</span></div>
+            </div>
+            <div class="badge-discount">–50%</div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- HIGHLIGHT DEAL -->
+    <!-- HIGHLIGHT BOX -->
     <div class="highlight-box">
-      <h3>Offre Spéciale – 2 produits achetés = livraison priorité</h3>
-      <p>Consultez notre équipe en rayon pour bénéficier des meilleurs conseils et offres personnalisées</p>
+      <h3>Stocks limités — Premier arrivé, premier servi !</h3>
+      <p>Produits frais de qualité · Chaîne du froid respectée · DLC vérifiée chaque matin par notre équipe</p>
     </div>
 
     <!-- QUALITY BADGES -->
     <div class="quality-row">
       <div class="quality-badge">
         <span class="icon">🥩</span>
-        <span class="label">100% Bœuf Halal</span>
+        <span class="label">Volaille &amp; Bœuf Halal</span>
       </div>
       <div class="quality-badge">
         <span class="icon">❄️</span>
@@ -426,13 +477,13 @@
     <!-- FOOTER -->
     <div class="footer">
       <div class="footer-left">
-        <strong>Auchan Kaolack</strong><br>
-        Rayon 44 – Charcuterie Traditionnelle<br>
+        <strong>Auchan Kaolack · Rayon 44</strong>
+        Charcuterie Traditionnelle
         <span class="validity">OFFRE LIMITÉE – JUSQU'À ÉPUISEMENT DU STOCK</span>
       </div>
       <div class="footer-right">
-        Prix applicables en rayon.<br>
-        Sous réserve de disponibilité.<br>
+        Prix au 100g · Vendu au poids.<br>
+        Offre sous réserve de disponibilité.<br>
         Voir conditions en magasin.
       </div>
     </div>

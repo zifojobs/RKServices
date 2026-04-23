@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Flyer A3 – DAARA Saucisson Poulet Nature – Auchan Kaolack</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    
+    @page { size: A3 portrait; margin: 0; }
+    body { width: 297mm; height: 420mm; font-family: Arial, sans-serif; margin: 0; overflow: hidden; background: #fff; }
+    .page { width: 297mm; height: 420mm; display: flex; flex-direction: column; overflow: hidden; }
+
+
+    /* HEADER */
+    .header {
+      background: #E2001A;
+      color: white;
+      padding: 10.2pt 17.4pt 8.7pt;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 40.6pt;
+      font-weight: 900;
+    }
+    .logo span {
+      background: white;
+      color: #E2001A;
+      padding: 2px 11.6pt;
+      border-radius: 4px;
+    }
+    .header-right {
+      text-align: right;
+      font-size: 11.6pt;
+      line-height: 1.5;
+      opacity: 0.92;
+    }
+    .header-right strong {
+      font-size: 14.5pt;
+      display: block;
+    }
+
+    /* BANNER -50% */
+    .banner {
+      background: #FF6B00;
+      color: white;
+      text-align: center;
+      padding: 11.6pt 17.4pt;
+    }
+    .banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14.5pt;
+    }
+    .circle-50 {
+      background: white;
+      color: #E2001A;
+      font-size: 52.2pt;
+      font-weight: 900;
+      width: 75.4pt;
+      height: 75.4pt;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .circle-50 .pct { font-size: 18.8pt; font-weight: 900; }
+    .banner h1 {
+      font-size: 37.7pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.1;
+    }
+    .banner p { font-size: 13.0pt; opacity: 0.95; margin-top: 2.9pt; }
+
+    /* BLACK STRIP */
+    .strip {
+      background: #1a1a1a;
+      color: #FFD700;
+      text-align: center;
+      padding: 5.8pt 17.4pt;
+      font-size: 13.0pt;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* PRODUCT HERO */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      padding: 14.5pt 23.2pt;
+      gap: 11.6pt;
+    }
+
+    .product-icon {
+      font-size: 104.4pt;
+      line-height: 1;
+    }
+
+    .brand-chip {
+      background: #1a1a1a;
+      color: white;
+      font-size: 17.4pt;
+      font-weight: 900;
+      letter-spacing: 3px;
+      padding: 4.3pt 17.4pt;
+      border-radius: 29.0pt;
+      text-transform: uppercase;
+    }
+
+    .product-name-hero {
+      font-size: 40.6pt;
+      font-weight: 900;
+      color: #1a1a1a;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .type-badge {
+      background: #FF6B00;
+      color: white;
+      font-size: 14.5pt;
+      font-weight: 900;
+      padding: 2.9pt 14.5pt;
+      border-radius: 5.8pt;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* PRICE BOX */
+    .price-box {
+      background: white;
+      border: 3px solid #E2001A;
+      border-radius: 14.5pt;
+      padding: 14.5pt 29.0pt;
+      text-align: center;
+      width: 100%;
+      max-width: 261.0pt;
+      box-shadow: 0 4px 16px rgba(226,0,26,0.15);
+    }
+
+    .price-label {
+      font-size: 11.6pt;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4.3pt;
+    }
+
+    .price-old-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11.6pt;
+      margin-bottom: 5.8pt;
+    }
+
+    .price-old {
+      font-size: 23.2pt;
+      color: #bbb;
+      text-decoration: line-through;
+    }
+
+    .price-was {
+      font-size: 11.6pt;
+      color: #aaa;
+    }
+
+    .price-new-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 5.8pt;
+    }
+
+    .price-new {
+      font-size: 84.1pt;
+      font-weight: 900;
+      color: #E2001A;
+      line-height: 1;
+    }
+
+    .price-unit {
+      font-size: 17.4pt;
+      color: #666;
+      font-weight: normal;
+    }
+
+    .price-economy {
+      margin-top: 7.2pt;
+      font-size: 13.0pt;
+      color: #555;
+    }
+    .price-economy strong {
+      color: #E2001A;
+      font-size: 15.9pt;
+    }
+
+    .per-kg-note {
+      font-size: 13.0pt;
+      color: #888;
+      margin-top: 5.8pt;
+      font-style: italic;
+    }
+
+    /* BOTTOM BADGES */
+    .badges {
+      display: flex;
+      justify-content: center;
+      gap: 8.7pt;
+      padding: 0 17.4pt;
+    }
+
+    .badge {
+      background: white;
+      border: 1.5px solid #ddd;
+      border-radius: 8.7pt;
+      padding: 5.8pt 8.7pt;
+      text-align: center;
+      flex: 1;
+      max-width: 72.5pt;
+    }
+
+    .badge .bicon { font-size: 20.3pt; display: block; margin-bottom: 2.9pt; }
+    .badge .blabel { font-size: 9.4pt; color: #555; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
+
+    /* FOOTER */
+    .footer {
+      background: #E2001A;
+      color: white;
+      padding: 7.2pt 17.4pt;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-left {
+      font-size: 11.6pt;
+      line-height: 1.6;
+    }
+    .footer-left strong { font-size: 14.5pt; display: block; }
+    .validity {
+      background: white;
+      color: #E2001A;
+      font-size: 10.2pt;
+      padding: 1.4pt 4.3pt;
+      border-radius: 4.3pt;
+      font-weight: 900;
+      margin-top: 1.4pt;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+    .footer-right {
+      text-align: right;
+      font-size: 10.2pt;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="logo"><span>auchan</span></div>
+    <div class="header-right">
+      <strong>Auchan Kaolack (SN1041)</strong>
+      Département Frais · Rayon 44 – Charcuterie Traditionnelle
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="banner-inner">
+      <div class="circle-50"><div>-50</div><div class="pct">%</div></div>
+      <div>
+        <h1>GRAND DÉSTOCKAGE<br>CHARCUTERIE</h1>
+        <p>50% de réduction · Offre valable jusqu'à épuisement des stocks</p>
+      </div>
+      <div class="circle-50"><div>-50</div><div class="pct">%</div></div>
+    </div>
+  </div>
+
+  <div class="strip">⚡ OFFRES LIMITÉES — JUSQU'À ÉPUISEMENT DES STOCKS — NE RATEZ PAS CES PRIX ! ⚡</div>
+
+  <div class="hero">
+    <div class="product-icon">🍗</div>
+    <div class="brand-chip">DAARA</div>
+    <div class="product-name-hero">Saucisson Poulet Nature</div>
+    <div class="type-badge">100% Poulet · Halal</div>
+
+    <div class="price-box">
+      <div class="price-label">Prix promotionnel</div>
+      <div class="price-old-row">
+        <span class="price-was">Ancien prix :</span>
+        <span class="price-old">318 F / 100g</span>
+      </div>
+      <div class="price-new-row">
+        <span class="price-new">159</span>
+        <span class="price-unit">F / 100g</span>
+      </div>
+      <div class="price-economy">Vous économisez <strong>159 F</strong> par 100g</div>
+      <div class="per-kg-note">Vendu au poids · Prix calculé à la découpe</div>
+    </div>
+  </div>
+
+  <div class="badges">
+    <div class="badge"><span class="bicon">🍗</span><span class="blabel">100% Poulet Halal</span></div>
+    <div class="badge"><span class="bicon">❄️</span><span class="blabel">Chaîne du Froid Respectée</span></div>
+    <div class="badge"><span class="bicon">✅</span><span class="blabel">Qualité Contrôlée</span></div>
+    <div class="badge"><span class="bicon">📅</span><span class="blabel">DLC Vérifiée Chaque Jour</span></div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <strong>Auchan Kaolack · Rayon 44</strong>
+      Charcuterie Traditionnelle
+      <span class="validity">OFFRE LIMITÉE – JUSQU'À ÉPUISEMENT DU STOCK</span>
+    </div>
+    <div class="footer-right">
+      Prix au 100g · Vendu au poids.<br>
+      Offre sous réserve de disponibilité.<br>
+      Voir conditions en magasin.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
